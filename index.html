@@ -1,1 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💾 Welcome to My WebZone 💾</title>
+  <style>
+    body {
+      background: url('https://www.transparenttextures.com/patterns/checkered-pattern.png');
+      color: #0000CC;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
 
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: #FFF8DC;
+      border: 5px ridge #FF00FF;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    h1 {
+      font-size: 50px;
+      color: #FF1493;
+      text-shadow: 2px 2px #00FFFF;
+      margin-bottom: 5px;
+      width: 100%;
+    }
+
+    .welcome-banner {
+      font-size: 22px;
+      background-color: #FFFF66;
+      color: #990000;
+      padding: 10px;
+      border: 3px dashed #FF00FF;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .sidebar {
+      width: 200px;
+      min-width: 180px;
+      margin-top: 20px;
+      border: 6px groove #FF69B4;
+      background-color: #FFFFFF;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .main {
+      flex: 1;
+      margin-left: 20px;
+      box-sizing: border-box;
+      min-width: 0;
+    }
+
+    .section {
+      margin-top: 40px;
+      border-top: 3px double #0000FF;
+      padding-top: 20px;
+    }
+
+    .project {
+      background-color: #E6E6FA;
+      border: 3px dotted #000080;
+      padding: 15px;
+      margin: 15px auto;
+      width: 90%;
+      padding-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #9900CC;
+      text-decoration: underline wavy #FF00FF;
+    }
+
+    a {
+      color: #FF00FF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      background-color: #FFFFCC;
+    }
+
+    .gif {
+      margin: 20px auto;
+      display: block;
+    }
+
+    marquee {
+      color: #FF0000;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .divider {
+      width: 80%;
+      margin: 30px auto;
+    }
+
+    .contact p {
+      font-size: 18px;
+      color: #003366;
+    }
+
+    .footer {
+      font-size: 14px;
+      color: #666;
+      margin-top: 40px;
+      padding-top: 10px;
+      border-top: 2px solid #ccc;
+    }
+
+    ul {
+      padding-left: 20px;
+      text-align: left;
+    }
+
+    /* RESPONSIVE CHANGES */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      .sidebar,
+      .main {
+        width: 100%;
+        margin: 0;
+      }
+
+      .main {
+        margin-top: 20px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .project {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .welcome-banner {
+        font-size: 18px;
+      }
+
+      marquee {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <marquee behavior="alternate" scrollamount="12">Check out my GitHub in the <a href="#contact">contact</a> section! Don't forget to follow me on social media as well.</marquee>
+
+  <div class="container">
+    <h1>mschiller890</h1>
+
+    <div class="welcome-banner">
+      Step back in time and explore the digital dimension of my mind!
+    </div>
+
+    <div class="sidebar">
+      <h3>Quick Links</h3>
+      <ul style="list-style-type: square;">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Featured Projects</a></li>
+        <li><a href="#contact">Contact me</a></li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <div class="section" id="about" style="margin-left: 20px; margin-right: 20px;">
+        <h2>👾 About Me</h2>
+        <p>Hey there! I'm <strong>Michal Schiller</strong>, a 16-year-old tech enthusiast who's always diving into the world of coding. While I might not always finish my projects (who does, right?), I’m constantly exploring new ideas, experimenting, and learning along the way.</p>
+        <p>Whether it’s building a random web app, experimenting with code in C#, or tinkering with Python scripts, I'm always up to something new. If you find any of my unfinished projects interesting, feel free to reach out!</p>
+        <p>Here’s a quick overview of my coding journey:</p>
+        <ul>
+          <li>💻 <strong>C#</strong> – Building desktop apps and small utilities</li>
+          <li>🌍 <strong>Java & Kotlin</strong> – From small apps to Android development</li>
+          <li>🐍 <strong>Python</strong> – For scripting, automation, and experimentation</li>
+          <li>🌐 <strong>HTML, CSS & JS</strong> – Crafting web pages, exploring creative layouts, and interactive features</li>
+        </ul>
+        <p>Feel free to explore my projects and reach out! I’m always excited to collaborate, share ideas, or just chat about cool tech stuff.</p>
+      </div>
+
+      <div class="section" id="projects">
+        <h2>Featured Projects</h2>
+        <div class="project">
+          <h3>ifetch</h3>
+          <p>Lightweight (and bad) alternative to neofetch.</p>
+          <a href="#">Check on GitHub ></a>
+        </div>
+      </div>
+
+      <div class="section contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:mschiller890@gmail.com">mschiller890@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/mschiller890">github.com/mschiller890</a></p>
+      </div>
+
+      <marquee behavior="scroll" direction="left" scrollamount="8">Thanks for visiting! Don't forget to bookmark this page!</marquee>
+
+      <div class="footer">
+        <p>© 2008–2025 Michal Schiller</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
