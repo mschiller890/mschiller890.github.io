@@ -1,233 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>💾 Welcome to My WebZone 💾</title>
-  <style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>mschiller890</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+    :root {
+    --bg: #0e1013;
+    --fg: #d4faff;
+    --accent: #00ffc3;
+    --border: rgba(0, 255, 195, 0.4);
+    --shadow: 0 0 20px rgba(0, 255, 195, 0.3);
+    }
+
+    * {
+    box-sizing: border-box;
+    }
+
     body {
-      background: url('https://www.transparenttextures.com/patterns/checkered-pattern.png');
-      color: #0000CC;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--bg);
+    color: var(--fg);
+    overflow-x: hidden;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      background-color: #FFF8DC;
-      border: 5px ridge #FF00FF;
-      padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    .background-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(0,255,195,0.05) 1px, transparent 1px), 
+                      linear-gradient(to bottom, rgba(0,255,195,0.05) 1px, transparent 1px);
+    z-index: -1;
+    animation: pan 60s linear infinite;
     }
 
-    h1 {
-      font-size: 50px;
-      color: #FF1493;
-      text-shadow: 2px 2px #00FFFF;
-      margin-bottom: 5px;
-      width: 100%;
+    @keyframes pan {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 1000px; }
     }
 
-    .welcome-banner {
-      font-size: 22px;
-      background-color: #FFFF66;
-      color: #990000;
-      padding: 10px;
-      border: 3px dashed #FF00FF;
-      margin-bottom: 20px;
-      width: 100%;
+    header {
+    padding: 60px 20px 20px;
+    text-align: center;
     }
 
-    .sidebar {
-      width: 200px;
-      min-width: 180px;
-      margin-top: 20px;
-      border: 6px groove #FF69B4;
-      background-color: #FFFFFF;
-      padding: 10px;
-      box-sizing: border-box;
+    header h1 {
+    font-size: 3em;
+    color: var(--accent);
+    text-shadow: var(--shadow);
+    margin: 0;
     }
 
-    .main {
-      flex: 1;
-      margin-left: 20px;
-      box-sizing: border-box;
-      min-width: 0;
+    header p {
+    font-size: 1.2em;
+    color: #8be9fd;
+    margin: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    border-right: 2px solid var(--accent);
+    margin-inline: auto;
+    width: 59ch;
+    animation: typing 3.5s steps(32, end) forwards, blink 0.75s step-end 3.5s infinite;
     }
 
-    .section {
-      margin-top: 40px;
-      border-top: 3px double #0000FF;
-      padding-top: 20px;
+    @keyframes typing {
+    from { width: 0ch; }
+    to { width: 59ch; }
     }
 
-    .project {
-      background-color: #E6E6FA;
-      border: 3px dotted #000080;
-      padding: 15px;
-      margin: 15px auto;
-      width: 90%;
-      padding-bottom: 40px;
+    @keyframes blink {
+    50% { border-color: transparent; }
     }
 
-    h2 {
-      font-size: 32px;
-      color: #9900CC;
-      text-decoration: underline wavy #FF00FF;
+    .terminal-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    margin: 24px;
+    box-shadow: var(--shadow);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .terminal-box:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 25px rgba(0, 255, 195, 0.6);
+    }
+
+    .terminal-box h2 {
+    color: var(--accent);
+    margin-top: 0;
     }
 
     a {
-      color: #FF00FF;
-      text-decoration: none;
-      font-weight: bold;
+    color: var(--accent);
+    text-decoration: none;
+    position: relative;
     }
 
-    a:hover {
-      text-decoration: underline;
-      background-color: #FFFFCC;
+    a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
     }
 
-    .gif {
-      margin: 20px auto;
-      display: block;
-    }
-
-    marquee {
-      color: #FF0000;
-      font-size: 20px;
-      font-weight: bold;
-      margin: 15px 0;
-    }
-
-    .divider {
-      width: 80%;
-      margin: 30px auto;
-    }
-
-    .contact p {
-      font-size: 18px;
-      color: #003366;
-    }
-
-    .footer {
-      font-size: 14px;
-      color: #666;
-      margin-top: 40px;
-      padding-top: 10px;
-      border-top: 2px solid #ccc;
+    a:hover::after {
+    width: 100%;
     }
 
     ul {
-      padding-left: 20px;
-      text-align: left;
+    padding-left: 20px;
     }
 
-    /* RESPONSIVE CHANGES */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        padding: 10px;
-      }
-
-      .sidebar,
-      .main {
-        width: 100%;
-        margin: 0;
-      }
-
-      .main {
-        margin-top: 20px;
-      }
-
-      h1 {
-        font-size: 36px;
-      }
-
-      h2 {
-        font-size: 28px;
-      }
-
-      .project {
-        width: 100%;
-      }
+    .footer {
+    text-align: center;
+    padding: 40px 20px 60px;
+    font-size: 0.9em;
+    color: #666;
     }
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 28px;
-      }
-
-      .welcome-banner {
-        font-size: 18px;
-      }
-
-      marquee {
-        font-size: 16px;
-      }
+    /* Projects section styles */
+    .project-grid {
+    display: grid;
+    grid-template-columns: repeat(minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
     }
-  </style>
+
+    .project-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 195, 0.1);
+    }
+
+    .project-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(0, 255, 195, 0.4);
+    }
+
+    .project-title {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 8px;
+    color: var(--accent);
+    }
+
+    .project-description {
+    font-size: 0.95em;
+    margin-bottom: 12px;
+    color: var(--fg);
+    }
+
+    .project-link {
+    font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    header p {
+        font-size: 1em;
+        max-width: 90%;
+    }
+
+    .terminal-box {
+        margin: 12px;
+        padding: 16px;
+    }
+    }
+</style>
 </head>
 <body>
+<div class="background-grid"></div>
 
-  <marquee behavior="alternate" scrollamount="12">Check out my GitHub in the <a href="#contact">contact</a> section! Don't forget to follow me on social media as well.</marquee>
-
-  <div class="container">
+<header>
     <h1>mschiller890</h1>
+    <p>// 16-year-old creative coder exploring chaos through code</p>
+</header>
 
-    <div class="welcome-banner">
-      Step back in time and explore the digital dimension of my mind!
-    </div>
+<div class="terminal-box" id="about">
+    <h2>About Me</h2>
+    <p>Hey! I'm <strong>Michal Schiller</strong>, a high school student messing with code instead of sleeping. I rarely finish projects, but that's part of the charm — I'm here for the experiments, not the trophies.</p>
+    <p>My stack currently looks something like this:</p>
+    <ul>
+    <li><strong>C#</strong> – small desktop apps, utility tools</li>
+    <li><strong>Java/Kotlin</strong> – mobile and experiments</li>
+    <li><strong>Python</strong> – automation & weird stuff</li>
+    <li><strong>HTML/CSS/JS</strong> – things like this site</li>
+    </ul>
+    <p style="font-size: 12px;"><a href="original.html">Original site design ></a></p>
+</div>
 
-    <div class="sidebar">
-      <h3>Quick Links</h3>
-      <ul style="list-style-type: square;">
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Featured Projects</a></li>
-        <li><a href="#contact">Contact me</a></li>
-      </ul>
-    </div>
-
-    <div class="main">
-      <div class="section" id="about" style="margin-left: 20px; margin-right: 20px;">
-        <h2>👾 About Me</h2>
-        <p>Hey there! I'm <strong>Michal Schiller</strong>, a 16-year-old tech enthusiast who's always diving into the world of coding. While I might not always finish my projects (who does, right?), I’m constantly exploring new ideas, experimenting, and learning along the way.</p>
-        <p>Whether it’s building a random web app, experimenting with code in C#, or tinkering with Python scripts, I'm always up to something new. If you find any of my unfinished projects interesting, feel free to reach out!</p>
-        <p>Here’s a quick overview of my coding journey:</p>
-        <ul>
-          <li>💻 <strong>C#</strong> – Building desktop apps and small utilities</li>
-          <li>🌍 <strong>Java & Kotlin</strong> – From small apps to Android development</li>
-          <li>🐍 <strong>Python</strong> – For scripting, automation, and experimentation</li>
-          <li>🌐 <strong>HTML, CSS & JS</strong> – Crafting web pages, exploring creative layouts, and interactive features</li>
-        </ul>
-        <p>Feel free to explore my projects and reach out! I’m always excited to collaborate, share ideas, or just chat about cool tech stuff.</p>
-      </div>
-
-      <div class="section" id="projects">
-        <h2>Featured Projects</h2>
-        <div class="project">
-          <h3>ifetch</h3>
-          <p>Lightweight (and bad) alternative to neofetch.</p>
-          <a href="#">Check on GitHub ></a>
+<div class="terminal-box" id="projects">
+    <h2>Featured Projects</h2>
+    <div class="project-grid">
+        <div class="project-card">
+            <div class="project-title">ifetch</div>
+            <p class="project-description">A scuffed but lovable alternative to neofetch. Written just because I could.</p>
+            <a href="#" class="project-link">View on GitHub ></a>
         </div>
-      </div>
-
-      <div class="section contact" id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:mschiller890@gmail.com">mschiller890@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/mschiller890">github.com/mschiller890</a></p>
-      </div>
-
-      <marquee behavior="scroll" direction="left" scrollamount="8">Thanks for visiting! Don't forget to bookmark this page!</marquee>
-
-      <div class="footer">
-        <p>© 2008–2025 Michal Schiller</p>
-      </div>
+        <!-- Example additional project -->
+        <div class="project-card">
+            <div class="project-title">WinTweaks</div>
+            <p class="project-description">A performance & UI tweaker for Windows. Built to feel like AtlasOS but with a GUI.</p>
+            <a href="#" class="project-link">View on GitHub ></a>
+        </div>
     </div>
-  </div>
+</div>
+
+<div class="terminal-box" id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:mschiller890@gmail.com">mschiller890@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/mschiller890" target="_blank">github.com/mschiller890</a></p>
+</div>
+
+<div class="footer">
+    <p>© 2008–2025 Michal Schiller. All bugs reserved.</p>
+</div>
 </body>
 </html>
