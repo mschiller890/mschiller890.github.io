@@ -1,0 +1,3 @@
+[submodule "projects/webos"]
+	path = projects/webos
+	url = https://github.com/mschiller890/webos.git
